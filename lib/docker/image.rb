@@ -121,7 +121,7 @@ class Docker::Image
       image = opts['fromImage'] || opts[:fromImage]
       tag = opts['tag'] || opts[:tag]
       image = "#{image}:#{tag}" if tag && !image.end_with?(":#{tag}")
-      get(image, {}, conn)
+      get(image, opts, conn)
     end
 
     # Return a specific image.
